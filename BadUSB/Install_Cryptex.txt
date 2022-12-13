@@ -1,0 +1,55 @@
+REM ==============================================================
+REM BadUSB Cryptex Install Script
+REM Author: Alex Kollar (Twitter: @ssgalex | github: @alexkollar)
+REM Target OS: Linux (Customized to my shortcuts using garuda)
+REM Function: Clones, installs and runs Cryptex 
+REM **While this script works well on my system you will likely 
+REM   need to tweak it to make it work on yours. If I can do this.
+REM   You deffinitely can. Above all have fun!**
+REM ==============================================================
+REM
+REM ==============================================================
+REM Pop open a terminal (You can change this shortcut to your own)
+REM ==============================================================
+WINDOWS ENTER
+DELAY 3000
+REM =============
+REM Clone Cryptex
+REM =============
+STRING git clone git@github.com:SSGorg/Cryptex.git
+ENTER
+DELAY 4000
+REM =========================
+REM Move into the Cryptex dir
+REM =========================
+STRING cd Cryptex/
+ENTER
+REM ======================
+REM Run the install script
+REM ======================
+STRING python3 install.py
+ENTER
+DELAY 3000
+STRING auto
+ENTER
+DELAY 3000
+STRING auto
+ENTER
+DELAY 3000
+REM =============================================
+REM ** YOU MUST ENTER YOUR SUDO PASSWORD BELOW **
+REM =============================================
+STRING ENTERYOURPASSWORDHERE
+ENTER
+DELAY 10000
+WINDOWS q
+DELAY 3000
+REM ====================================
+REM Test to see if it installed properly
+REM ====================================
+WINDOWS ENTER
+DELAY 1000
+STRING cryptex b64 -e -t "Cryptex has been successfully installed! "
+ENTER
+DELAY 10000
+WINDOWS q
